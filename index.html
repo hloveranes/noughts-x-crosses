@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naughts And Crosses</title>
+  <link rel="stylesheet" href="./app/css/style.css">
+  <script type="module" src="./app/js/core.js" defer async></script>
+</head>
+<body>
+  <div id="app">
+    <div class="txt-center">
+      <h1>Naughts And Crosses</h1>
+    </div>
+    
+    <div class="txt-center mb-3">
+      <h2 id="event"></h2>
+    </div>
+
+    <div id="game-frame"></div>
+
+    <div id="reset-container" class="txt-center">
+      <button id="reset-game">Reset</button>
+    </div>
+
+    <div id="player-details" class="txt-center mt-4">
+      <form id="player-form" method="post">
+        <label for="player-x">Player X:</label><br>
+        <input type="text" id="player-x" name="player-x" placeholder="Enter player x name"><br>
+        <label for="player-o">Player O:</label><br>
+        <input type="text" id="player-o" name="player-o" placeholder="Enter player o name"><br><br>
+        <input id="form-submit" type="submit" value="Submit">
+      </form> 
+    </div>
+  </div>
+
+  <script type="module" src="./app/js/core.js" defer async></script>
+</body>
+</html>
