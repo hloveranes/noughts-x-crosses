@@ -5,7 +5,7 @@ const SetPlayers = (nodeElement) => {
     e.preventDefault();
     const px = document.getElementById('player-x').value;
     const po = document.getElementById('player-o').value;
-    Browser.SetStorageData({playerX: px, playerO: po})
+    Browser.SetStorageData({playerX: px ? px : 'X', playerO: po ? po : 'O' })
     nodeElement.style.display = 'none';
   });
 }

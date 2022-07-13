@@ -90,12 +90,22 @@ const setResult = (result) => {
   let storage = Browser.GetStorage();
 
   if(!result){
-    result = lastText == 'X' 
-    ? 'Player ' + storage.playerX + ' wins' 
-    : 'Player ' + storage.playerO + ' wins'; 
+    if(storage){
+      console.log(storage);
+      result = lastText == 'X' 
+      ? 'Player ' + storage.playerX + ' wins' 
+      : 'Player ' + storage.playerO + ' wins'; 
+    }else{
+      result = lastText == 'X' ? 'Player X wins' : 'Player O wins'; 
+    }
+
     onGame = false;
   }
   Browser.SetStorageData({lastResult: result});
+  playerEvent(result);
+}
+
+const playerEvent = (result) => {
   document.getElementById('event').innerText = result;
 }
 
@@ -109,6 +119,7 @@ const GameReset = (nodeElement, callBack) => {
     lastText = '';
     emptyBlocks = ['', '', '', '', '', '', '', '', ''];
     window.localStorage.clear();
+    playerEvent('');
   })
 }
 
